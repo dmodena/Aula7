@@ -196,12 +196,14 @@ public class FrmAluno extends javax.swing.JFrame {
             int matricula = Integer.parseInt(tfMatricula.getText().trim());
             boolean encontrado = false;
             
-            for(Aluno a : alunos) {
-                encontrado = true;
+            for(Aluno a : alunos) {                
                 if(matricula == a.getMatricula()) {
+                    encontrado = true;
                     tfNota1.setText(String.valueOf(a.getNota1()));
                     tfNota2.setText(String.valueOf(a.getNota2()));
                     tfMedia.setText(String.valueOf(a.getMedia()));
+                    tfMatricula.setText("");
+                    tfMatricula.requestFocus();
                 }
             }
             
@@ -237,6 +239,7 @@ public class FrmAluno extends javax.swing.JFrame {
         tfMatricula.setText("");
         tfNota1.setText("");
         tfNota2.setText("");
+        tfMedia.setText("");
         tfMatricula.requestFocus();
     }
     
